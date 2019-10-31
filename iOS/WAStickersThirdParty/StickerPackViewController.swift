@@ -47,10 +47,10 @@ class StickerPackViewController: UIViewController, UICollectionViewDataSource, U
         stickersCollectionView.scrollIndicatorInsets.bottom = 10
 
         itemsPerRow = portraitOrientation ? portraitItems : landscapeItems
-
-        let infoButton: UIButton = UIButton(type: .infoLight)
-        infoButton.addTarget(self, action: #selector(infoPressed(button:)), for: .touchUpInside)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
+//
+//        let infoButton: UIButton = UIButton(type: .infoLight)
+//        infoButton.addTarget(self, action: #selector(infoPressed(button:)), for: .touchUpInside)
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: infoButton)
 
         bottomGradientView.isUserInteractionEnabled = false
         bottomGradientView.translatesAutoresizingMaskIntoConstraints = false
@@ -266,16 +266,16 @@ class StickerPackViewController: UIViewController, UICollectionViewDataSource, U
         present(shareViewController, animated: true, completion: nil)
     }
 
-    @objc func infoPressed(button: UIButton) {
-        performSegue(withIdentifier: "info", sender: self)
-    }
+//    @objc func infoPressed(button: UIButton) {
+//        performSegue(withIdentifier: "info", sender: self)
+//    }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let nc = segue.destination as? UINavigationController,
-            let infoVC = nc.viewControllers.first as? StickerPackInfoViewController {
-            infoVC.stickerPack = stickerPack
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let nc = segue.destination as? UINavigationController,
+//            let infoVC = nc.viewControllers.first as? StickerPackInfoViewController {
+//            infoVC.stickerPack = stickerPack
+//        }
+//    }
 
     @objc func addButtonPressed(button: AquaButton) {
         let loadingAlert: UIAlertController = UIAlertController(title: "Sending to WhatsApp", message: "\n\n", preferredStyle: .alert)
